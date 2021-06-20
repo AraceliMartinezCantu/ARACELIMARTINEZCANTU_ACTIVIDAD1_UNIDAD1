@@ -1,0 +1,18 @@
+attach(RECIEN_NACIDOS)
+
+summary(EDAD_MADRE)
+summary(PESO_GANADO) #tipos de datos
+
+FA=as.data.frame(table(EDAD_MADRE=factor(cut(EDAD_MADRE, breaks = 10))))
+attach(FA) #muestra la tabla de la FA con sus valores solicitados
+
+sum(Freq)#sumando la tabla de frecuencia
+
+FA[("FREC.RELATIVA")]=with(FA,Freq/1000) #muestra en la tabla frec. relativa, dividiendolo entre 1000 que son los valores que tiene la tabla EDAD_MADRE
+
+FA[("PORCENTAJE")]=with(FA,(Freq/1000)*100)
+
+attach(FA)
+
+sum(PORCENTAJE)
+
